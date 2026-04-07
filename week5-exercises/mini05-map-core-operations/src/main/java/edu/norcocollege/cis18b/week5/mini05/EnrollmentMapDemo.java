@@ -10,7 +10,6 @@ public class EnrollmentMapDemo {
         Map<String, Integer> enrollment = new HashMap<>();
 
         enrollment.put("SEC-101", 30);
-        enrollment.put("SEC-102", 28);
         enrollment.put("SEC-099", 12);
 
         // Core map lifecycle operations.
@@ -33,6 +32,8 @@ public class EnrollmentMapDemo {
         departments.computeIfAbsent("CIS", key -> new java.util.ArrayList<>()).add("SEC-101");
         departments.computeIfAbsent("CIS", key -> new java.util.ArrayList<>()).add("SEC-102");
         System.out.println("Grouped sections: " + departments);
+
+        System.out.println("Mutable key hazerd: if a key changes after being stored in a hash-based map, later lookups can fail because the hash location no longer matches the original key.");
 
         // TODO: Demonstrate and explain why mutable keys are hazardous in hash-based maps.
     }

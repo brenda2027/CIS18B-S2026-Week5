@@ -17,16 +17,25 @@ public class SetComparisonDemo {
         Set<String> treeSet = new TreeSet<>(tags);
 
         System.out.println("HashSet: " + hashSet);
+        System.out.println("HaseSet explanation: removes duplicates, but order is not reliable.");
+
         System.out.println("LinkedHashSet: " + linkedHashSet);
+        System.out.println("LinkedHashSet explanation: removes duplicates and preserves insertion order.");
+
         System.out.println("TreeSet: " + treeSet);
+        System.out.println("Treeset explanation: removes duplicates and keep elements sorted.");
 
         Set<String> caseInsensitive = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
         caseInsensitive.addAll(tags);
         System.out.println("TreeSet (case-insensitive): " + caseInsensitive);
+        System.out.println("Case-insensitive explanation: values like queue and Queue count as duplicates.");
 
         // TODO: Replace with your own comparator (e.g., by length then alphabetically).
-        Set<String> customOrder = new TreeSet<>(Comparator.comparingInt(String::length).thenComparing(String::compareTo));
+        Set<String> customOrder = new TreeSet<>(
+            Comparator.comparingInt(String::length).thenComparing(String::compareTo)
+        );
         customOrder.addAll(tags);
         System.out.println("TreeSet (custom comparator): " + customOrder);
+        System.out.println("Custom comparator explanation: elements are sorted by length, then alphabetically.");
     }
 }

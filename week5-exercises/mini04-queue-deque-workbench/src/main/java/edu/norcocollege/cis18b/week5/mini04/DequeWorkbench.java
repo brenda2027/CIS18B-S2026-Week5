@@ -31,7 +31,10 @@ public class DequeWorkbench {
         while (!undoStack.isEmpty()) {
             System.out.println("Undo popped: " + undoStack.pop());
         }
-
         // TODO: Add one more stack action and show the updated LIFO behavior.
+
+    undoStack.push("delete section");
+    System.out.println("Undo popped: " + undoStack.pop());
+    System.out.println("Why not legacy Stack: Stack is older and ArrayDeque is the preferred modern choice for stack behavior.");    
     }
 }
