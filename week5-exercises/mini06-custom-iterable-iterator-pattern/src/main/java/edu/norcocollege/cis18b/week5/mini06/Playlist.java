@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.processing.SupportedOptions;
+
 public class Playlist implements Iterable<PlaylistItem> {
 
     private final List<PlaylistItem> items = new ArrayList<>();
@@ -26,5 +28,12 @@ public class Playlist implements Iterable<PlaylistItem> {
         return sorted.iterator();
     }
 
+    public Iterator<PlaylistItem> reverseIterator() {
+        // Third traveral strategy: reverse insertion order.
+        List<PlaylistItem> reversed = new ArrayList<>(items);
+        java.util.Collections.reverse(reversed);
+        return reversed.iterator();
+
+    }
     // TODO: Add a third traversal strategy for the extension challenge.
 }

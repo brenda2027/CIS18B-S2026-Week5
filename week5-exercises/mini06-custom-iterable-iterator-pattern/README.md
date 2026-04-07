@@ -62,3 +62,7 @@ mvn -Dtest=PlaylistTest test
 * Correct custom `Iterable` implementation
 * Clear iterator strategy design
 * Strong test coverage and explanation quality
+
+## Reflection
+ Built in iteration was able to be enough if the playlist only required one simple traversal order such as insertion order.The custom iterable adds value when same data needs multiple meaningful traversal strategies such as default order and priority order, without different writing.
+
